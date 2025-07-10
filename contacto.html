@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto - Hardware white</title>
+  <link rel="stylesheet" href="miestilo.css" />
+  <style>
+    
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      background-color: #000000;
+    }
+
+   
+    header,
+    main.holder,
+    footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    
+    header {
+      background: transparent;
+    }
+  </style>
+</head>
+<body>
+
+  
+  <div id="particles-js"></div>
+
+  <header>
+    <div class="holder">
+      <img src="logos/logo_SB.png" alt="Logo" class="logo" />
+      <h1>Hardware white</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="holder">
+    <section class="holder contacto">
+      <h2>Contactame</h2>
+      <p>Dejá tu mensaje y te respondo por correo 📧</p>
+
+
+
+
+       <!-- aca use formpree.com para el formulario, ellos me dan la endpoint y lo que resiven(nombre, correo,mensaje) me lo mandan a mi correo en el momento  -->
+      <form
+        id="formulario-contacto"
+        action="https://formspree.io/f/xblyekbo"
+        method="POST"
+      >
+        <input type="hidden" name="_captcha" value="false" />
+
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre" required />
+
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="message" rows="5" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+
+      <div
+        id="mensaje-enviado"
+        style="display: none; text-align: center; margin-top: 30px"
+      >
+        <h3 style="color: #2c6e49;">✅ ¡Gracias por tu mensaje!</h3>
+        <p>En breve me pondré en contacto con vos.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <img src="logos/logo_SB.png" width="100px" height="100px" alt="logo" />
+    <p>&copy; 2025 Hardware white. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById("formulario-contacto");
+    const mensaje = document.getElementById("mensaje-enviado");
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault(); // hace que no recargue la página
+
+      const data = new FormData(form);
+
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        form.style.display = "none";
+        mensaje.style.display = "block";
+      } else {
+        alert("Hubo un error. Por favor, intentá nuevamente.");
+      }
+    });
+  </script>
+
+  <!-- aca un script de las particulas -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80 },
+        color: { value: "#00ff88" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+        size: { value: 3 },
+        line_linked: {
+          enable: true,
+          distance: 120,
+          color: "#00ff88",
+          opacity: 0.4,
+          width: 1,
+        },
+        move: {
+          enable: true,
+          speed: 2,
+        },
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "grab" },
+          onclick: { enable: true, mode: "push" },
+        },
+        modes: {
+          grab: { distance: 140, line_linked: { opacity: 1 } },
+          push: { particles_nb: 4 },
+        },
+      },
+      retina_detect: true,
+    });
+  </script>
+</body>
+</html>

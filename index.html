@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hardware white</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="miestilo.css">
+
+  <style>
+    
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      background-color: #000000;
+    }
+
+    main.holder, header, section, footer {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+
+<body>
+
+
+<div id="particles-js"></div>
+
+<main class="holder">
+  <header>
+    <div class="holder">
+      <img src="logos/logo_SB.png" alt="logo" class="logo">
+      <div>
+        <h1>Hardware white</h1>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="catalogo">
+    <h2>Catálogo de Servicios</h2>
+    <div class="catalogo-container">
+      <article class="servicio">
+        <img src="logos/imagenes de servicios/emsamble.jpg" alt="Ensamble de PC" class="servicio-img">
+        <h3>🛠️ Ensamble de PC</h3>
+        <p>Armamos tu computadora con los mejores estándares, asegurando compatibilidad y rendimiento.</p>
+        <a href="#" class="boton-servicio">Más info</a>
+      </article>
+
+      <article class="servicio">
+        <img src="logos/imagenes de servicios/mantenimiento.jpg" alt="Mantenimiento de PC" class="servicio-img">
+        <h3>🧽 Mantenimiento de PC</h3>
+        <p>Limpieza física y software para mejorar la vida útil y velocidad de tu equipo.</p>
+        <a href="#" class="boton-servicio">Más info</a>
+      </article>
+
+      <article class="servicio">
+        <img src="logos/imagenes de servicios/asesoria.png" alt="Asesoramiento" class="servicio-img">
+        <h3>💡 Asesoramiento</h3>
+        <p>Te ayudamos a elegir componentes o resolver dudas antes de invertir.</p>
+        <a href="#" class="boton-servicio">Más info</a>
+      </article>
+
+      <article class="servicio">
+        <img src="logos/imagenes de servicios/preguntas2.png" alt="Problemas frecuentes" class="servicio-img">
+        <h3>🔧 Problemas Frecuentes</h3>
+        <p>Diagnóstico y solución a errores comunes como pantallas azules o fallas de encendido.</p>
+        <a href="#" class="boton-servicio">Más info</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="identificar-problema">
+    <h2>Identifica tu Problema</h2>
+    <p>Seleccioná una opción para ver la solución:</p>
+
+
+
+    <div class="opciones">
+      <!-- OPCIÓN 1 -->
+      <div class="opcion">
+        <h3>🔌 No enciende</h3>
+        <p>Tu computadora no da señales de vida.</p>
+        <button onclick="mostrarSolucion(1)">Ver solución</button>
+
+        <div id="solucion1" class="solucion" style="display: none;">
+          <p><strong>Posibles causas:</strong> fuente dañada, cables mal conectados, botón de encendido o placa madre fallando.</p>
+          <p><strong>Sugerencia:</strong> Verificá la fuente de poder, cambiá el cable, o probá la placa madre con otra fuente.</p>
+          <button class="boton-secundario" onclick="mostrarContacto(1)">¿No funcionó?</button>
+
+          <div id="contacto1" class="contacto-extra" style="display: none;">
+            <p>Podés contactarme directamente:</p>
+            <a href="contacto.html" class="btn-contacto">📧 Gmail</a>
+            <a href="https://wa.me/543772435138" target="_blank" class="btn-contacto">💬 WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- OPCIÓN 2 -->
+      <div class="opcion">
+        <h3>🐢 Funciona muy lenta</h3>
+        <p>Tu PC tarda mucho en arrancar o abrir programas.</p>
+        <button onclick="mostrarSolucion(2)">Ver solución</button>
+
+        <div id="solucion2" class="solucion" style="display: none;">
+          <p><strong>Causas comunes:</strong> disco lleno, programas en segundo plano, malware, falta de limpieza.</p>
+          <p><strong>Sugerencia:</strong> Desinstalá programas innecesarios, revisá el administrador de tareas y hacé limpieza física.</p>
+          <button class="boton-secundario" onclick="mostrarContacto(2)">¿No funcionó?</button>
+
+          <div id="contacto2" class="contacto-extra" style="display: none;">
+            <p>Podés contactarme directamente:</p>
+            <a href="contacto.html" class="btn-contacto">📧 Gmail</a>
+            <a href="https://wa.me/543772435138" target="_blank" class="btn-contacto">💬 WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- OPCIÓN 3 -->
+      <div class="opcion">
+        <h3>🖥️ Enciende pero no da video</h3>
+        <p>La PC prende pero no ves imagen en pantalla.</p>
+        <button onclick="mostrarSolucion(3)">Ver solución</button>
+
+        <div id="solucion3" class="solucion" style="display: none;">
+          <p><strong>Puede ser:</strong> problema de RAM, placa de video mal conectada o monitor.</p>
+          <p><strong>Sugerencia:</strong> Probá conectar otro monitor, revisá la RAM y limpiá los contactos.</p>
+          <button class="boton-secundario" onclick="mostrarContacto(3)">¿No funcionó?</button>
+
+          <div id="contacto3" class="contacto-extra" style="display: none;">
+            <p>Podés contactarme directamente:</p>
+            <a href="contacto.html" class="btn-contacto">📧 Gmail</a>
+            <a href="https://wa.me/543772435138" target="_blank" class="btn-contacto">💬 WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- OPCIÓN 4 -->
+      <div class="opcion">
+        <h3>🔥 Se sobrecalienta</h3>
+        <p>Tu PC se calienta mucho o se apaga sola.</p>
+        <button onclick="mostrarSolucion(4)">Ver solución</button>
+
+        <div id="solucion4" class="solucion" style="display: none;">
+          <p><strong>Causas:</strong> pasta térmica vieja, ventiladores sucios o sin mantenimiento.</p>
+          <p><strong>Sugerencia:</strong> Limpiá los ventiladores, cambiá la pasta térmica y controlá la temperatura con software.</p>
+          <button class="boton-secundario" onclick="mostrarContacto(4)">¿No funcionó?</button>
+
+          <div id="contacto4" class="contacto-extra" style="display: none;">
+            <p>Podés contactarme directamente:</p>
+            <a href="contacto.html" class="btn-contacto">📧 Gmail</a>
+            <a href="https://wa.me/543772435138" target="_blank" class="btn-contacto">💬 WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <img src="logos/logo_SB.png" width="100px" height="100px" alt="logo">
+  <p>&copy; 2025 Tu Empresa de Reparación de PC. Todos los derechos reservados.</p>
+</footer>
+
+<!-- aca algo de java -->
+<script>
+function mostrarSolucion(id) {
+  const seleccionada = document.getElementById('solucion' + id);
+  document.querySelectorAll('.solucion').forEach(div => {
+    if (div !== seleccionada) div.style.display = 'none';
+  });
+  document.querySelectorAll('.contacto-extra').forEach(div => div.style.display = 'none');
+  seleccionada.style.display = (seleccionada.style.display === 'none') ? 'block' : 'none';
+}
+
+function mostrarContacto(id) {
+  const contacto = document.getElementById('contacto' + id);
+  contacto.style.display = (contacto.style.display === 'none') ? 'block' : 'none';
+}
+</script>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 80 },
+    color: { value: "#00ff88" },
+    shape: { type: "circle" },
+    opacity: { value: 0.5 },
+    size: { value: 3 },
+    line_linked: {
+      enable: true,
+      distance: 120,
+      color: "#00ff88",
+      opacity: 0.4,
+      width: 1
+    },
+    move: {
+      enable: true,
+      speed: 2
+    }
+  },
+  interactivity: {
+    detect_on: "canvas",
+    events: {
+      onhover: { enable: true, mode: "grab" },
+      onclick: { enable: true, mode: "push" }
+    },
+    modes: {
+      grab: { distance: 140, line_linked: { opacity: 1 } },
+      push: { particles_nb: 4 }
+    }
+  },
+  retina_detect: true
+});
+</script>
+
+</body>
+</html>
